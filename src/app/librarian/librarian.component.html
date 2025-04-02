@@ -1,5 +1,43 @@
 
 <app-nav></app-nav>
-<p>librarian works!</p>
+
+librarian works
+
+<!-- <div>
+<form (ngSubmit)="onSubmit()" #bookForm="ngForm">
+    <div>
+        <label for="title">title</label>
+        <input type="text" [(ngModel)]="book.title" name="title" required #title="ngModel"
+        >
+        <p  *ngIf="title.touched && title.invalid">Title is required</p>
+
+        <label for="author">Author</label>
+        <input type="text" [(ngModel)]="book.author" name="author" required #author="ngModel"
+        >
+        <p  *ngIf="author.touched && author.invalid">author is required</p>
+
+        <label for="isbn">ISBN</label>
+        <input type="text" [(ngModel)]="book.isbn" name="isbn" required #isbn="ngModel"
+        >
+        <p  *ngIf="isbn.touched && isbn.invalid">isbn is required</p>
+
+        <div>
+        <button type="submit" [disabled]="!bookForm.form.valid">{{isEditing?'updateBook':'Add Book'}}</button>
+        <button type="button" (click)="onCancel()">Cancel </button>
+        </div>
+    </div>
+</form>
 
 
+<h3>Your Book Record</h3>
+<table>
+    <tr *ngFor="let record of records; let i=index">
+<td>{{record.title}}
+
+</td>
+    </tr>
+</table>
+
+</div>
+
+ -->

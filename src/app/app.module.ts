@@ -12,6 +12,7 @@ import { SigninComponent } from './auth/component/signin/signin.component';
 import { AuthComponent } from './auth/auth.component';
 import { SignupComponent } from './auth/component/signup/signup.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { SignupComponent } from './auth/component/signup/signup.component';
      NavComponent,
      SignupComponent,
      SigninComponent,
-     AuthComponent
+     AuthComponent,
+  
   ],
   imports: [
     BrowserModule,
