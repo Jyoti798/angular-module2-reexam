@@ -1,1 +1,26 @@
-<p>nav works!</p>
+<nav>
+    <div class="header">
+        <a routerLink="/">Library Management</a>
+        <div class="header">
+            <div>
+            <ul>
+                <li>
+                    <a routerLink="/user">Book management</a>
+                    
+                </li>
+                <li><a routerLink="/librarian">Library Management</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li *ngIf="isAuthenticated">
+                    <span>Welcome, {{userName}} ({{isLibrarian?'Librarian':'Member'}})</span>
+                </li>
+                <li *ngIf="isAuthenticated">
+                    <a href="#" (click)="onLogout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</nav>
