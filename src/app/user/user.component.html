@@ -1,3 +1,19 @@
 <app-nav></app-nav>
-<p>user works!</p>
+<div>
+    <h2>Available Books</h2>
+    <ul>
+      <li *ngFor="let book of books">
+        {{ book.title }} - {{ book.author }} ({{ book.isbn }}) - 
+        <button (click)="checkoutBook(book)" [disabled]="!book.available">Checkout</button>
+      </li>
+    </ul>
+  
+    <h2>Checked Out Books</h2>
+    <ul>
+      <li *ngFor="let book of checkedOutBooks">
+        {{ book.title }} - {{ book.author }} ({{ book.isbn }}) - 
+        <button (click)="returnBook(book)">Return</button>
+      </li>
+    </ul>
+  </div>
 

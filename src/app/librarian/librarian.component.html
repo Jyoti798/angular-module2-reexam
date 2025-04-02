@@ -1,43 +1,30 @@
 
 <app-nav></app-nav>
-
-librarian works
-
-<!-- <div>
-<form (ngSubmit)="onSubmit()" #bookForm="ngForm">
-    <div>
-        <label for="title">title</label>
-        <input type="text" [(ngModel)]="book.title" name="title" required #title="ngModel"
-        >
-        <p  *ngIf="title.touched && title.invalid">Title is required</p>
-
-        <label for="author">Author</label>
-        <input type="text" [(ngModel)]="book.author" name="author" required #author="ngModel"
-        >
-        <p  *ngIf="author.touched && author.invalid">author is required</p>
-
-        <label for="isbn">ISBN</label>
-        <input type="text" [(ngModel)]="book.isbn" name="isbn" required #isbn="ngModel"
-        >
-        <p  *ngIf="isbn.touched && isbn.invalid">isbn is required</p>
-
-        <div>
-        <button type="submit" [disabled]="!bookForm.form.valid">{{isEditing?'updateBook':'Add Book'}}</button>
-        <button type="button" (click)="onCancel()">Cancel </button>
-        </div>
+<div>
+    <h2>Manage Books</h2>
+    <form (ngSubmit)="addBook()">
+      <input type="text" [(ngModel)]="newBook.title" name="title" placeholder="Title" required>
+      <input type="text" [(ngModel)]="newBook.author" name="author" placeholder="Author" required>
+      <input type="text" [(ngModel)]="newBook.isbn" name="isbn" placeholder="ISBN" required>
+      <button type="submit">Add Book</button>
+    </form>
+  
+    <h2>Book List</h2>
+    <ul>
+      <li *ngFor="let book of books">
+        {{ book.title }} - {{ book.author }} ({{ book.isbn }}) -
+        <button (click)="editBook(book)">Edit</button>
+        <button (click)="deleteBook(book.isbn)">Delete</button>
+      </li>
+    </ul>
+  
+    <div *ngIf="selectedBook">
+      <h2>Edit Book</h2>
+      <form (ngSubmit)="updateBook()">
+        <input type="text" [(ngModel)]="selectedBook.title" name="title" required>
+        <input type="text" [(ngModel)]="selectedBook.author" name="author" required>
+        <input type="text" [(ngModel)]="selectedBook.isbn" name="isbn" required readonly>
+        <button type="submit">Update Book</button>
+      </form>
     </div>
-</form>
-
-
-<h3>Your Book Record</h3>
-<table>
-    <tr *ngFor="let record of records; let i=index">
-<td>{{record.title}}
-
-</td>
-    </tr>
-</table>
-
-</div>
-
- -->
+  </div>
